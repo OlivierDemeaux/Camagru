@@ -1,0 +1,112 @@
+                The Viewport !
+
+Setting The Viewport
+HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+
+You should include the following <meta> viewport element in all your web pages:
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
+
+
+
+
+
+Building a Responsive Grid-View
+Lets start building a responsive grid-view.
+
+First ensure that all HTML elements have the box-sizing property set to border-box. This makes sure that the padding and border are included in the total width and height of the elements.
+
+        Add the following code in your CSS:
+
+                * {
+                    box-sizing: border-box;
+                }
+
+
+        example of a two columns, one of 25%, the other of 75%
+
+                .menu {
+                    width: 25%;
+                    float: left;
+                }
+                .main {
+                    width: 75%;
+                    float: left;
+                }
+
+The example above is fine if the web page only contains two columns.
+
+However, we want to use a responsive grid-view with 12 columns.
+
+
+
+
+
+What is a Media Query?
+Media query is a CSS technique introduced in CSS3.
+
+It uses the @media rule to include a block of CSS properties only if a certain condition is true.
+
+Example
+  If the browser window is 600px or smaller, the background color will be lightblue:
+
+                @media only screen and (max-width: 600px)
+                {
+                    body
+                    {
+                        background-color: lightblue;
+                    }
+                }
+
+
+
+Add a Breakpoint
+Earlier in this tutorial we made a web page with rows and columns, and it was responsive, but it did not look good on a small screen.
+
+Media queries can help with that. We can add a breakpoint where certain parts of the design will behave differently on each side of the breakpoint.
+
+Example
+      When the screen (browser window) gets smaller than 768px, each column should have a width of 100%:
+
+                            /* For desktop: */
+                            .col-1 {width: 8.33%;}
+                            .col-2 {width: 16.66%;}
+                            .col-3 {width: 25%;}
+                            .col-4 {width: 33.33%;}
+                            .col-5 {width: 41.66%;}
+                            .col-6 {width: 50%;}
+                            .col-7 {width: 58.33%;}
+                            .col-8 {width: 66.66%;}
+                            .col-9 {width: 75%;}
+                            .col-10 {width: 83.33%;}
+                            .col-11 {width: 91.66%;}
+                            .col-12 {width: 100%;}
+
+                            @media only screen and (max-width: 768px) {
+                                /* For mobile phones: */
+                                [class*="col-"] {
+                                    width: 100%;
+                                }
+                            }
+
+
+
+Change Font Size With Media Queries
+
+You can also use media queries to change the font size of an element on different screen sizes:
+
+  Example
+  /* If the screen size is 601px or more, set the font-size of <div> to 80px */
+                    @media only screen and (min-width: 601px) {
+                      div.example {
+                        font-size: 80px;
+                      }
+                    }
+
+  /* If the screen size is 600px or less, set the font-size of <div> to 30px */
+                  @media only screen and (max-width: 600px) {
+                    div.example {
+                      font-size: 30px;
+                    }
+                  }

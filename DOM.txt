@@ -1,0 +1,43 @@
+The HTML DOM (Document Object Model)
+When a web page is loaded, the browser creates a Document Object Model of the page.
+
+The HTML DOM is a standard for how to get, change, add, or delete HTML elements.
+
+The DOM Programming Interface
+The HTML DOM can be accessed with JavaScript (and with other programming languages).
+
+In the DOM, all HTML elements are defined as objects.
+
+The programming interface is the properties and methods of each object.
+
+A property is a value that you can get or set (like changing the content of an HTML element).
+
+A method is an action you can do (like add or deleting an HTML element).
+
+
+The getElementById Method
+The most common way to access an HTML element is to use the id of the element.
+
+In the example above the getElementById method used id="demo" to find the element.
+
+                                    Finding HTML Elements
+                    Method	                                   Description
+          document.getElementById(id)	                Find an element by element id
+          document.getElementsByTagName(name)	        Find elements by tag name
+          document.getElementsByClassName(name)     	Find elements by class name
+
+
+                                    Changing HTML Elements
+                    Method                                        Description
+          element.innerHTML =  new html content       	Change the inner HTML of an element
+          element.attribute = new value	                Change the attribute value of an HTML element
+          element.setAttribute(attribute, value)        Change the attribute value of an HTML element
+          element.style.property = new style            Change the style of an HTML element
+
+                                    Adding and Deleting Elements
+                      Method                                  Description
+          document.createElement(element)	              Create an HTML element
+          document.removeChild(element)	                Remove an HTML element
+          document.appendChild(element)	                Add an HTML element
+          document.replaceChild(element)                Replace an HTML element
+          document.write(text)	                        Write into the HTML output stream
